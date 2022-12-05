@@ -22,6 +22,9 @@ The data come from the **coronavirus** [package](https://github.com/RamiKrispin/
 ## Figure
 
 ![](coronavirus-figure.png)
+## Methods
+
+We are using *ggplot2* and *readr*
 
 ## Data prep
 
