@@ -1,0 +1,66 @@
+---
+title: "Cumulative deaths from COVID-19"
+author: "Mine Çetinkaya-Rundel"
+format: html
+---
+
+## Packages required
+
+```{r}
+if(!require("pacman")) install.packages("pacman")
+pacman::p_load("readr")
+pacman::p_load("ggplot2")
+pacman::p_load("scales")
+```
+
+## Introduction
+
+Countries around the world are responding to an outbreak of respiratory illness caused by a novel coronavirus, COVID-19. In this report we explore how the trajectory of the cumulative deaths of a number of countries.
+
+The data come from the **coronavirus** [package](https://github.com/RamiKrispin/coronavirus), which pulls data from the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) Coronavirus repository.
+
+## Figure
+
+![](coronavirus-figure.png)
+
+## Data prep
+
+Lets read the data of the following countries:
+
+-   "China",
+-   "France",
+-   "United Kingdom",
+-   "US",
+-   "Turkey"
+
+```{r}
+country_data <- readr::read_csv("covid-country_data.csv")
+```
+
+## Visualisation
+
+The following visualisation shows the number of cumulative cases vs. days elapsed since the 10th confirmed death in each country. The time span plotted for each country varies since some countries started seeing (and reporting) deaths from COVID-19 much later than others.
+
+```{r}
+#| label: visualise
+#| warning: false
+
+ggplot(data = country_data,
+       mapping = aes(x = days_elapsed, 
+                     y = cumulative_cases, 
+                     color = country)) +
+  # represent cumulative cases with lines
+  geom_line() +
+  # use pretty colors
+  scale_color_viridis_d() +
+  # better formatting for y-axis
+  scale_y_continuous(labels = scales::label_comma()) +
+  # customize labels
+  labs(
+    x = "Days since 10th confirmed death",
+    y = "Cumulative number of deaths",
+    title = "Cumulative deaths from COVID-19, selected countries",
+    subtitle = "Data as of Sat, Dec 3, 2022",
+    caption = "Source: github.com/RamiKrispin/coronavirus"
+  )
+```
