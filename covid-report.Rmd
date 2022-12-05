@@ -1,6 +1,6 @@
 ---
 title: "Cumulative deaths from COVID-19"
-author: "Mine Çetinkaya-Rundel"
+author: "Nicolás Torres"
 format: html
 ---
 
