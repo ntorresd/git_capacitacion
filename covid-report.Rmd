@@ -33,7 +33,7 @@ Lets read the data of the following countries:
 -   "Turkey"
 
 ```{r}
-country_data <- readr::read_csv("covid-country_data.csv")
+country_data <- readr::read_csv("covid-country_data-drop_UnitedStates.csv")
 ```
 
 ## Visualisation
