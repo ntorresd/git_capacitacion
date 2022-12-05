@@ -21,7 +21,7 @@ The data come from the **coronavirus** [package](https://github.com/RamiKrispin/
 
 ## Figure
 
-![](coronavirus-figure.png)
+![](coronavirus-package.png)
 
 ## Data prep
 
