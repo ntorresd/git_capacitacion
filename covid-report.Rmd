@@ -21,7 +21,7 @@ The data come from the **coronavirus** [package](https://github.com/RamiKrispin/
 
 ## Figure
 
-![](coronavirus-package.png)
+![](coronavirus-figure.png)
 
 ## Data prep
 
@@ -30,7 +30,6 @@ Lets read the data of the following countries:
 -   "China",
 -   "France",
 -   "United Kingdom",
--   "US",
 -   "Turkey"
 
 ```{r}
